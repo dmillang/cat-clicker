@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
+    <script defer src="script.js"></script>
     <!-- CSS -->
     <style>
         .cat-counters {
@@ -48,33 +48,5 @@
                 <img id="cat-2__img" src="https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496" alt="image of a shy cat">
         </section>
     </div>
-
-    <!-- JavaScript -->
-    <script>
-        const elem1 = document.getElementById('cat-1__img');
-        const elem2 = document.getElementById('cat-2__img');
-
-        const catName1 = document.getElementById("cat-1__name").textContent = `Kitty Cat`;
-        const catName2 = document.getElementById("cat-2__name").textContent = `Shy Cat`;
-
-        let clickCount1 = 0;
-        let clickCount2 = 0;
-
-        const DOMCounter1 = document.getElementById("cat-1__counter");
-        const DOMCounter2 = document.getElementById("cat-2__counter");
-
-        elem1.addEventListener('click', function(){
-            clickCount1 += 1;
-            DOMCounter1.textContent = `Clicks: ${clickCount1}`;
-            console.log(clickCount1);
-        }, false);
-
-        elem2.addEventListener('click', function(){
-            clickCount2 += 1;
-            DOMCounter2.textContent = `Clicks: ${clickCount2}`;
-            console.log(clickCount2);
-        }, false);
-
-    </script>
 </body>
 </html>
