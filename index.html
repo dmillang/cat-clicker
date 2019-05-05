@@ -5,22 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- CSS -->
+    <style>
+        .cat-counters {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .cat-1__info,
+        .cat-2__info {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cat-1__info > *,
+        .cat-2__info > * {
+            margin-bottom: 0;
+        }
+
+        .cat-counters > section > img {
+            width: 640px;
+            height: 420px;
+        }
+    </style>
 </head>
 <body>
-    <section>
-        <p id="counter">clicks: </p>
-        <img id="img-elem" src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" alt="image of a cat">
-    </section>
+    <div class="cat-counters">
+        <section class="cat-1">
+            <div class="cat-1__info">
+            <h4 id="cat-1__name">name: </h4>
+            <h4 id="cat-1__counter">Clicks: 0</h4>
+            </div>
+            <img id="cat-1__img" src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" alt="image of a kitty cat">
+        </section>
 
+        <section class="cat-2">
+                <div class="cat-2__info">
+                <h4 id="cat-2__name">name</h4>
+                <h4 id="cat-2__counter">Clicks: 0</h4>
+                </div>
+                <img id="cat-2__img" src="https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496" alt="image of a shy cat">
+        </section>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        const elem = document.getElementById('img-elem');
-        let clickCount = 0;
-        const DOMCounter = document.getElementById("counter");
-        elem.addEventListener('click', function(){
-            clickCount += 1;
-            DOMCounter.textContent = `clicks: ${clickCount}`;
-            console.log(clickCount);
+        const elem1 = document.getElementById('cat-1__img');
+        const elem2 = document.getElementById('cat-2__img');
+
+        const catName1 = document.getElementById("cat-1__name").textContent = `Kitty Cat`;
+        const catName2 = document.getElementById("cat-2__name").textContent = `Shy Cat`;
+
+        let clickCount1 = 0;
+        let clickCount2 = 0;
+
+        const DOMCounter1 = document.getElementById("cat-1__counter");
+        const DOMCounter2 = document.getElementById("cat-2__counter");
+
+        elem1.addEventListener('click', function(){
+            clickCount1 += 1;
+            DOMCounter1.textContent = `Clicks: ${clickCount1}`;
+            console.log(clickCount1);
         }, false);
+
+        elem2.addEventListener('click', function(){
+            clickCount2 += 1;
+            DOMCounter2.textContent = `Clicks: ${clickCount2}`;
+            console.log(clickCount2);
+        }, false);
+
     </script>
 </body>
 </html>
